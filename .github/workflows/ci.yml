@@ -22,8 +22,12 @@ jobs:
         run: |
           python scripts/build_pi_curriculum.py
           python scripts/build_pi_agent_curriculum.py
+          python scripts/build_decision_curriculum.py
       - name: Validate hybrid tool router
         run: python scripts/eval_hybrid_tools.py
       - name: Train tiny BPE smoke tokenizer
         run: |
           python scripts/build_bpe_tokenizer.py             --data data/pi_curriculum.jsonl data/pi_agent_curriculum.jsonl             --out /tmp/pi_bpe.json             --vocab-size 300             --min-pair-freq 2
+      - name: Smoke train System One
+        run: |
+          python -m conversa_llm.train_decision             --data data/decision_curriculum.jsonl             --tokenizer-file /tmp/pi_bpe.json             --out /tmp/decision.pt             --steps 2             --context 64             --d-model 32             --layers 1             --heads 4             --batch-size 4
