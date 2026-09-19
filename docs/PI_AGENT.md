@@ -1,51 +1,40 @@
-# Usar o Conversa LLM no Pi Agent
+# Conversa LLM no Pi Agent
 
-O Pi aceita providers locais compatíveis com OpenAI Chat Completions. O Conversa LLM expõe:
+O Conversa LLM expõe uma API local compatível com OpenAI Chat Completions:
 
 - `GET /health`
 - `GET /v1/models`
 - `POST /v1/chat/completions`
-- respostas normais e streaming SSE
+- streaming SSE
+- `tool_calls` nativo no formato OpenAI
 
-## 1. Instalar
-
-No repositório:
+## Instalação no Windows
 
 ```powershell
+git clone https://github.com/lloupp/conversa-llm.git
+cd conversa-llm
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-pip install -e .
-```
-
-Para habilitar fallback web:
-
-```powershell
+python -m pip install --upgrade pip
 pip install -e ".[web]"
 ```
 
-## 2. Colocar o checkpoint
+## Arquivos do checkpoint Pi
 
-Exemplo:
+Coloque:
 
 ```text
-checkpoints/python-58pct.pt
-data/python_word_vocab.json
+checkpoints/conversa-pi.pt
+data/pi_bpe.json
 ```
 
-## 3. Subir a API local
+## Subir o servidor
 
 ```powershell
 python -m conversa_llm.openai_server `
-  --model checkpoints/python-58pct.pt `
-  --tokenizer-file data/python_word_vocab.json
-```
-
-Com fallback web:
-
-```powershell
-python -m conversa_llm.openai_server `
-  --model checkpoints/python-58pct.pt `
-  --tokenizer-file data/python_word_vocab.json `
+  --model checkpoints/conversa-pi.pt `
+  --tokenizer-file data/pi_bpe.json `
+  --model-id conversa-pi `
   --web-fallback
 ```
 
@@ -55,47 +44,88 @@ Teste:
 Invoke-RestMethod http://127.0.0.1:8000/health
 ```
 
-## 4. Configurar o Pi
+## Configurar o Pi
 
-O arquivo de modelos do Pi fica em:
-
-```text
-~/.pi/agent/models.json
-```
-
-No Windows:
+Copie ou mescle `examples/pi/models.json` em:
 
 ```text
 $HOME\.pi\agent\models.json
 ```
 
-Use `examples/pi/models.json` como provider ou mescle a entrada `conversa-local` no seu arquivo existente.
-
-Depois abra o Pi e use `/model` para selecionar:
+Depois abra o Pi, execute `/model` e selecione:
 
 ```text
-Conversa LLM Python 58 (local)
+Conversa Pi (local)
 ```
 
-## Limite atual importante
+### Windows: PowerShell como ferramenta
 
-O checkpoint Python 58 tem contexto neural efetivo de apenas 64 tokens. O adapter anuncia uma janela maior para que o Pi consiga enviar seu envelope de sistema, mas por enquanto **somente a mensagem de usuário mais recente é encaminhada ao modelo neural**.
+O Pi usa Git Bash por padrão no Windows. Se preferir PowerShell, mescle o conteúdo de:
 
-Isso permite testar o modelo dentro do Pi, mas ainda não o transforma em um coding agent completo.
+```text
+examples/pi/settings.windows.json
+```
 
-O checkpoint atual também não aprendeu o protocolo de tool calling. Ele pode responder texto dentro do Pi, porém ainda não sabe emitir chamadas estruturadas para editar arquivos, executar shell ou usar as ferramentas do Pi.
+em:
 
-O próximo marco é treinar um checkpoint específico para Pi com:
+```text
+$HOME\.pi\agent\settings.json
+```
 
-1. contexto de pelo menos 512–2048 tokens;
-2. exemplos de system prompt;
-3. chamadas de ferramenta estruturadas;
-4. resultados de ferramenta;
-5. geração/correção de código Python;
-6. benchmark de uso real de ferramentas.
+## Como o tool calling funciona
 
-## Fallback web
+O modelo pode emitir internamente:
 
-Com `--web-fallback`, o servidor mede a proporção de tokens desconhecidos no prompt para o tokenizer word-level. Acima do limiar (padrão 35%), ele consulta a web e retorna os resultados com título, snippet e URL.
+```text
+<tool_call>{"name":"read","arguments":{"path":"README.md"}}</tool_call>
+```
 
-A heurística é deliberadamente conservadora e ainda não é uma medida calibrada de confiança do LLM.
+O adaptador converte isso para o formato OpenAI:
+
+```json
+{
+  "tool_calls": [{
+    "type": "function",
+    "function": {
+      "name": "read",
+      "arguments": "{\"path\":\"README.md\"}"
+    }
+  }]
+}
+```
+
+O Pi executa a ferramenta e devolve o resultado numa mensagem `tool`. O servidor inclui esse resultado no próximo contexto do modelo.
+
+## Roteador híbrido
+
+Para pedidos explícitos e simples, o adaptador não depende apenas da geração neural. Exemplos:
+
+- "Leia src/app.py"
+- "Execute no shell o comando `pytest -q`"
+- "Substitua alpha por beta em src/app.py"
+
+O roteador extrai a intenção e os argumentos diretamente e produz a chamada estruturada. Isso reduz erros de cópia de caminhos/comandos em um modelo pequeno.
+
+Use `--no-hybrid-tools` para medir apenas o comportamento neural.
+
+## Busca web
+
+Com `--web-fallback`, perguntas textuais fora do conhecimento local podem cair no mecanismo de busca e retornar fontes/snippets.
+
+O fallback web não substitui tool calling do Pi e não executa comandos externos.
+
+## Segurança
+
+As ferramentas do Pi operam com as permissões normais do processo. Use Git para rollback, revise comandos destrutivos e rode o Pi dentro de um diretório de projeto apropriado.
+
+## Limites atuais
+
+O modelo continua pequeno e não deve ser comparado a um LLM comercial:
+
+- contexto neural: 256 tokens;
+- bom para chamadas curtas de ferramenta e pequenas funções Python;
+- histórico longo é compactado;
+- tarefas complexas de arquitetura ainda exigem modelos maiores;
+- o roteador híbrido cobre intenções explícitas, mas não raciocínio arbitrário de ferramenta.
+
+O objetivo deste marco é ser funcional como agente local pequeno e treinável no seu PC de 8 GB.

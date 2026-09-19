@@ -9,21 +9,26 @@
         "supportsReasoningEffort": false,
         "supportsUsageInStreaming": false,
         "supportsStore": false,
+        "supportsStrictMode": false,
         "maxTokensField": "max_tokens"
       },
       "models": [
         {
-          "id": "conversa-python-58",
-          "name": "Conversa LLM Python 58 (local)",
+          "id": "conversa-pi",
+          "name": "Conversa Pi (local)",
           "reasoning": false,
           "input": ["text"],
-          "contextWindow": 8192,
-          "maxTokens": 48,
+          "contextWindow": 256,
+          "maxTokens": 96,
           "cost": {
             "input": 0,
             "output": 0,
             "cacheRead": 0,
             "cacheWrite": 0
+          },
+          "samplingParams": {
+            "temperature": 0.3,
+            "top_k": 20
           }
         }
       ]
