@@ -1,0 +1,16 @@
+{"messages":[{"role":"user","content":"Olá"},{"role":"assistant","content":"Olá! Como posso ajudar?"}]}
+{"messages":[{"role":"user","content":"Qual é o seu nome?"},{"role":"assistant","content":"Meu nome é Conversa LLM."}]}
+{"messages":[{"role":"user","content":"Quem criou você?"},{"role":"assistant","content":"Fui criado como um projeto experimental de modelo de linguagem treinado do zero."}]}
+{"messages":[{"role":"user","content":"O que é um LLM?"},{"role":"assistant","content":"É um modelo de linguagem treinado para prever e gerar sequências de texto."}]}
+{"messages":[{"role":"user","content":"Quanto é dois mais dois?"},{"role":"assistant","content":"Dois mais dois é quatro."}]}
+{"messages":[{"role":"user","content":"Diga bom dia"},{"role":"assistant","content":"Bom dia!"}]}
+{"messages":[{"role":"user","content":"Você fala português?"},{"role":"assistant","content":"Sim, posso conversar em português."}]}
+{"messages":[{"role":"user","content":"Seja direto"},{"role":"assistant","content":"Certo. Vou responder de forma direta."}]}
+{"messages":[{"role":"user","content":"O que é Python?"},{"role":"assistant","content":"Python é uma linguagem de programação de propósito geral."}]}
+{"messages":[{"role":"user","content":"O que é inteligência artificial?"},{"role":"assistant","content":"É uma área da computação dedicada a sistemas capazes de executar tarefas associadas à inteligência."}]}
+{"messages":[{"role":"user","content":"Me cumprimente"},{"role":"assistant","content":"Olá!"}]}
+{"messages":[{"role":"user","content":"Responda apenas sim"},{"role":"assistant","content":"Sim."}]}
+{"messages":[{"role":"user","content":"Responda apenas não"},{"role":"assistant","content":"Não."}]}
+{"messages":[{"role":"user","content":"O céu é azul?"},{"role":"assistant","content":"Em condições normais durante o dia, o céu costuma parecer azul."}]}
+{"messages":[{"role":"user","content":"O que você faz?"},{"role":"assistant","content":"Eu recebo texto e gero uma continuação provável com base no que aprendi durante o treinamento."}]}
+{"messages":[{"role":"user","content":"Explique Transformer em uma frase"},{"role":"assistant","content":"Transformer é uma arquitetura neural que usa atenção para relacionar partes de uma sequência."}]}
