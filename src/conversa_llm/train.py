@@ -10,20 +10,20 @@ from .config import ModelConfig
 from .data import ConversationDataset, collate_batch
 from .model import ConversaGPT
 from .profiles import PROFILES, get_profile
-from .tokenizer import ByteTokenizer
-from .word_tokenizer import WordTokenizer
+from .tokenizer_loader import load_tokenizer
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Treina o Conversa LLM do zero.")
     parser.add_argument(
-        "--data",
-        nargs="+",
-        default=["data/sample_conversations.jsonl"],
+        "--data", nargs="+", default=["data/sample_conversations.jsonl"],
         help="Um ou mais arquivos JSONL de conversa",
     )
     parser.add_argument("--out", default="checkpoints/model.pt")
-    parser.add_argument("--tokenizer-file", default=None, help="Vocabulario do WordTokenizer; omita para byte-level")
+    parser.add_argument(
+        "--tokenizer-file", default=None,
+        help="Tokenizer salvo (word ou byte-BPE); omita para byte-level puro",
+    )
     parser.add_argument("--init-from", default=None, help="Checkpoint cujos pesos iniciam este treino")
     parser.add_argument("--steps", type=int, default=300)
     parser.add_argument("--profile", choices=sorted(PROFILES), default=None)
@@ -36,33 +36,23 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--heads", type=int, default=None)
     parser.add_argument("--context", type=int, default=None)
     parser.add_argument(
-        "--supervise-all",
-        action="store_true",
-        help="Aplica loss a toda a sequencia; util como pretreino pequeno do formato e linguagem.",
+        "--supervise-all", action="store_true",
+        help="Aplica loss a toda a sequência; útil para pré-treino pequeno.",
     )
     return parser
 
 
 def resolve_training_args(args: argparse.Namespace) -> argparse.Namespace:
     defaults = {
-        "batch_size": 8,
-        "grad_accum": 1,
-        "lr": 3e-4,
-        "d_model": 128,
-        "layers": 4,
-        "heads": 4,
-        "context": 256,
+        "batch_size": 8, "grad_accum": 1, "lr": 3e-4,
+        "d_model": 128, "layers": 4, "heads": 4, "context": 256,
     }
     if args.profile:
         profile = get_profile(args.profile)
         defaults.update(
-            batch_size=profile.batch_size,
-            grad_accum=profile.grad_accum,
-            lr=profile.lr,
-            d_model=profile.d_model,
-            layers=profile.layers,
-            heads=profile.heads,
-            context=profile.context,
+            batch_size=profile.batch_size, grad_accum=profile.grad_accum,
+            lr=profile.lr, d_model=profile.d_model, layers=profile.layers,
+            heads=profile.heads, context=profile.context,
         )
     for key, value in defaults.items():
         if getattr(args, key) is None:
@@ -79,7 +69,7 @@ def count_parameters(model: torch.nn.Module) -> int:
 def main() -> None:
     args = resolve_training_args(build_parser().parse_args())
     torch.manual_seed(42)
-    tokenizer = WordTokenizer.load(args.tokenizer_file) if args.tokenizer_file else ByteTokenizer()
+    tokenizer = load_tokenizer(args.tokenizer_file)
     config = ModelConfig(
         vocab_size=tokenizer.vocab_size,
         context_length=args.context,
@@ -89,31 +79,27 @@ def main() -> None:
         d_ff=args.d_model * 4,
     )
     dataset = ConversationDataset(
-        args.data,
-        config.context_length,
-        supervise_all=args.supervise_all,
-        tokenizer=tokenizer,
+        args.data, config.context_length,
+        supervise_all=args.supervise_all, tokenizer=tokenizer,
     )
     loader = DataLoader(
-        dataset,
-        batch_size=args.batch_size,
-        shuffle=True,
+        dataset, batch_size=args.batch_size, shuffle=True,
         collate_fn=lambda batch: collate_batch(batch, pad_token=tokenizer.PAD),
     )
     model = ConversaGPT(config).to(args.device)
     if args.init_from:
         checkpoint = torch.load(args.init_from, map_location=args.device, weights_only=True)
         if checkpoint["config"] != config.to_dict():
-            raise ValueError("configuracao do --init-from difere da configuracao atual")
+            raise ValueError("configuração do --init-from difere da configuração atual")
         model.load_state_dict(checkpoint["model"])
         print(f"pesos iniciais carregados de {args.init_from}")
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.1)
 
     parameter_count = count_parameters(model)
     print(
-        f"device={args.device} params={parameter_count:,} "
+        f"device={args.device} params={parameter_count:,} examples={len(dataset)} "
         f"batch={args.batch_size} grad_accum={args.grad_accum} "
-        f"batch_efetivo={args.batch_size * args.grad_accum}"
+        f"batch_efetivo={args.batch_size * args.grad_accum} context={args.context}"
     )
 
     model.train()
@@ -129,7 +115,6 @@ def main() -> None:
                 input_ids, labels = next(iterator)
             input_ids = input_ids.to(args.device)
             labels = labels.to(args.device)
-
             _, loss = model(input_ids, labels)
             assert loss is not None
             (loss / args.grad_accum).backward()
@@ -149,13 +134,9 @@ def main() -> None:
             "config": config.to_dict(),
             "model": model.state_dict(),
             "training": {
-                "profile": args.profile,
-                "batch_size": args.batch_size,
-                "grad_accum": args.grad_accum,
-                "steps": args.steps,
-                "lr": args.lr,
-                "supervise_all": args.supervise_all,
-                "init_from": args.init_from,
+                "profile": args.profile, "batch_size": args.batch_size,
+                "grad_accum": args.grad_accum, "steps": args.steps, "lr": args.lr,
+                "supervise_all": args.supervise_all, "init_from": args.init_from,
                 "tokenizer_file": args.tokenizer_file,
             },
         },

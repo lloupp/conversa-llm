@@ -6,8 +6,7 @@ import torch
 
 from .config import ModelConfig
 from .model import ConversaGPT
-from .tokenizer import ByteTokenizer
-from .word_tokenizer import WordTokenizer
+from .tokenizer_loader import load_tokenizer
 
 
 def load_model(path: str, device: str) -> ConversaGPT:
@@ -19,17 +18,19 @@ def load_model(path: str, device: str) -> ConversaGPT:
     return model
 
 
-def answer(model: ConversaGPT, tokenizer: ByteTokenizer, prompt: str, device: str) -> str:
+def answer(model: ConversaGPT, tokenizer, prompt: str, device: str) -> str:
     prefix = tokenizer.encode_prompt(prompt)
+    if len(prefix) >= model.config.context_length:
+        prefix = prefix[:2] + prefix[-(model.config.context_length - 3):]
     input_ids = torch.tensor([prefix], dtype=torch.long, device=device)
     output = model.generate(
         input_ids,
-        max_new_tokens=160,
+        max_new_tokens=min(160, max(1, model.config.context_length // 2)),
         temperature=0.7,
         top_k=30,
         stop_tokens={tokenizer.EOS, tokenizer.USER, tokenizer.SEP},
     )[0].tolist()
-    generated = output[len(prefix) :]
+    generated = output[len(prefix):]
     return tokenizer.decode_text(generated).strip()
 
 
@@ -40,7 +41,7 @@ def main() -> None:
     parser.add_argument("--tokenizer-file", default=None)
     args = parser.parse_args()
 
-    tokenizer = WordTokenizer.load(args.tokenizer_file) if args.tokenizer_file else ByteTokenizer()
+    tokenizer = load_tokenizer(args.tokenizer_file)
     model = load_model(args.model, args.device)
     print("Conversa LLM. Digite /sair para encerrar.")
     while True:
