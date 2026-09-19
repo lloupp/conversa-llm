@@ -1,0 +1,32 @@
+{
+  "providers": {
+    "conversa-local": {
+      "baseUrl": "http://127.0.0.1:8000/v1",
+      "api": "openai-completions",
+      "apiKey": "local",
+      "compat": {
+        "supportsDeveloperRole": false,
+        "supportsReasoningEffort": false,
+        "supportsUsageInStreaming": false,
+        "supportsStore": false,
+        "maxTokensField": "max_tokens"
+      },
+      "models": [
+        {
+          "id": "conversa-python-58",
+          "name": "Conversa LLM Python 58 (local)",
+          "reasoning": false,
+          "input": ["text"],
+          "contextWindow": 8192,
+          "maxTokens": 48,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        }
+      ]
+    }
+  }
+}
