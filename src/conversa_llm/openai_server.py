@@ -120,28 +120,57 @@ class LocalBackend:
     ) -> AgentReply:
         tools = tools or []
         user_prompt = latest_user_prompt(messages)
-
-        if tools and self.hybrid_tools and _last_role(messages) == "user":
-            explicit = route_explicit_tool(user_prompt, tools)
-            if explicit:
-                return AgentReply(tool_call=explicit)
-
-        prompt = render_agent_prompt(messages, tools) if tools else user_prompt
-
-        if not tools and self.web_fallback and self.unknown_ratio(user_prompt) >= self.unknown_threshold:
-            return AgentReply(content=search_web(user_prompt))
-
-        generated = self._generate(prompt, max_tokens, temperature, top_k)
         allowed = {
             (tool.get("function") or {}).get("name")
             for tool in tools
             if isinstance(tool, dict) and tool.get("type") == "function"
         }
         allowed.discard(None)
+
+        decision = self.decision.decide(messages) if self.decision else None
+        preferred_action = (
+            decision["action"] if decision and decision.get("trusted") else None
+        )
+
+        if preferred_action == "web_search" and self.web_fallback:
+            return AgentReply(content=search_web(user_prompt))
+
+        explicit = None
+        if tools and self.hybrid_tools and _last_role(messages) == "user":
+            explicit = route_explicit_tool(user_prompt, tools)
+            if explicit and (
+                preferred_action is None or explicit.name == preferred_action
+            ):
+                return AgentReply(tool_call=explicit)
+
+        prompt = render_agent_prompt(messages, tools) if tools else user_prompt
+        if preferred_action:
+            prompt += (
+                "\n\nDECISÃO SYSTEM_ONE: "
+                + preferred_action
+                + ". Respeite esta decisão; gere apenas o texto ou os argumentos necessários."
+            )
+
+        if (
+            not tools
+            and preferred_action is None
+            and self.web_fallback
+            and self.unknown_ratio(user_prompt) >= self.unknown_threshold
+        ):
+            return AgentReply(content=search_web(user_prompt))
+
+        generated = self._generate(prompt, max_tokens, temperature, top_k)
         model_calls = parse_tool_calls(generated, allowed_tools=set(allowed)) if tools else []
         content = strip_tool_calls(generated) if tools else generated
         chosen = None
-        if tools and _last_role(messages) == "user":
+        if tools and preferred_action in allowed:
+            chosen = next(
+                (call for call in model_calls if call.name == preferred_action),
+                None,
+            )
+            if chosen is None and explicit and explicit.name == preferred_action:
+                chosen = explicit
+        elif tools and _last_role(messages) == "user":
             chosen = choose_tool_call(user_prompt, tools, model_calls)
         elif tools and not content and model_calls:
             chosen = model_calls[0]
@@ -325,9 +354,16 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> None:
     args = build_parser().parse_args()
     backend = LocalBackend(
-        args.model, args.tokenizer_file, args.device, args.model_id,
-        args.web_fallback, args.unknown_threshold,
+        args.model,
+        args.tokenizer_file,
+        args.device,
+        args.model_id,
+        args.web_fallback,
+        args.unknown_threshold,
         hybrid_tools=not args.no_hybrid_tools,
+        decision_model_path=args.decision_model,
+        decision_tokenizer_file=args.decision_tokenizer_file,
+        decision_threshold=args.decision_threshold,
     )
     OpenAIHandler.backend = backend
     server = ThreadingHTTPServer((args.host, args.port), OpenAIHandler)
