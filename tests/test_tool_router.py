@@ -32,5 +32,26 @@ def test_routes_edit_with_current_pi_shape():
     }
 
 
+def test_routes_grep():
+    call = route_explicit_tool("Procure `TODO` em src.", TOOLS)
+    assert call is not None
+    assert call.name == "grep"
+    assert call.arguments == {"pattern": "TODO", "path": "src"}
+
+
+def test_routes_find():
+    call = route_explicit_tool("Encontre `**/*.py` em tests.", TOOLS)
+    assert call is not None
+    assert call.name == "find"
+    assert call.arguments == {"pattern": "**/*.py", "path": "tests"}
+
+
+def test_routes_ls():
+    call = route_explicit_tool("Liste os arquivos em src.", TOOLS)
+    assert call is not None
+    assert call.name == "ls"
+    assert call.arguments == {"path": "src"}
+
+
 def test_does_not_infer_destructive_action_without_explicit_verb():
     assert route_explicit_tool("O arquivo src/app.py talvez precise mudar.", TOOLS) is None
