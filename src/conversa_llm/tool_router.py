@@ -39,11 +39,41 @@ def _command(text: str) -> str | None:
     return None
 
 
+def _quoted_or_backtick(text: str) -> str | None:
+    match = _BACKTICK_RE.search(text)
+    if match:
+        return match.group(1).strip()
+    match = re.search(r'["\']([^"\']+)["\']', text)
+    return match.group(1).strip() if match else None
+
+
 def route_explicit_tool(prompt: str, tools: list[dict[str, Any]]) -> ParsedToolCall | None:
     """Compila pedidos explícitos e simples para tools do Pi."""
     names = _available(tools)
     lowered = prompt.lower()
     path = _path(prompt)
+
+    if "ls" in names and re.search(r"\b(liste|listar|mostre)\b.*\b(arquivos|pasta|diret[oó]rio|conte[uú]do)\b", lowered):
+        match = re.search(r"(?:em|de|da|do)\s+([A-Za-z0-9_.\\/-]+)\s*$", prompt.rstrip(". "), re.IGNORECASE)
+        return ParsedToolCall("ls", {"path": match.group(1)} if match else {})
+
+    if "find" in names and re.search(r"\b(encontre|ache|localize|procure arquivos?)\b", lowered):
+        pattern = _quoted_or_backtick(prompt)
+        if pattern and ("*" in pattern or "?" in pattern):
+            args: dict[str, Any] = {"pattern": pattern}
+            match = re.search(r"\s+em\s+([A-Za-z0-9_.\\/-]+)\s*$", prompt.rstrip(". "), re.IGNORECASE)
+            if match:
+                args["path"] = match.group(1)
+            return ParsedToolCall("find", args)
+
+    if "grep" in names and re.search(r"\b(procure|busque|pesquise|grep)\b", lowered):
+        pattern = _quoted_or_backtick(prompt)
+        if pattern and not ("*" in pattern and "arquiv" in lowered):
+            args = {"pattern": pattern}
+            match = re.search(r"\s+em\s+([A-Za-z0-9_.\\/-]+)\s*$", prompt.rstrip(". "), re.IGNORECASE)
+            if match:
+                args["path"] = match.group(1)
+            return ParsedToolCall("grep", args)
 
     if "powershell" in lowered and "powershell" in names and re.search(r"\b(execute|rode|rodar|use)\b", lowered):
         command = _command(prompt)
@@ -51,10 +81,17 @@ def route_explicit_tool(prompt: str, tools: list[dict[str, Any]]) -> ParsedToolC
             return ParsedToolCall("powershell", {"command": command})
 
     if ("bash" in names or "powershell" in names) and (
-        " no shell " in f" {lowered} " or " no terminal" in lowered or re.search(r"\b(execute|rode|rodar)\b", lowered)
+        " no shell " in f" {lowered} "
+        or " no terminal" in lowered
+        or re.search(r"\b(execute|rode|rodar)\b", lowered)
     ):
         command = _command(prompt)
-        if command and not (path and re.search(r"\b(leia|abra|escreva|grave|salve|edite|substitua|troque|altere)\b", lowered)):
+        if command and not (
+            path and re.search(
+                r"\b(leia|abra|escreva|grave|salve|edite|substitua|troque|altere)\b",
+                lowered,
+            )
+        ):
             name = "bash" if "bash" in names else "powershell"
             return ParsedToolCall(name, {"command": command})
 
@@ -68,9 +105,13 @@ def route_explicit_tool(prompt: str, tools: list[dict[str, Any]]) -> ParsedToolC
         for pattern in replacements:
             match = re.search(pattern, prompt, flags=re.IGNORECASE)
             if match:
-                old, new = match.group(1).strip(" `\"'.,"), match.group(2).strip(" `\"'.,")
+                old = match.group(1).strip(" `\"'.,")
+                new = match.group(2).strip(" `\"'.,")
                 if old and new:
-                    return ParsedToolCall("edit", {"path": path, "edits": [{"oldText": old, "newText": new}]})
+                    return ParsedToolCall(
+                        "edit",
+                        {"path": path, "edits": [{"oldText": old, "newText": new}]},
+                    )
 
     if path and "write" in names and re.search(r"\b(crie|escreva|grave|salve)\b", lowered):
         content_patterns = [
@@ -86,19 +127,30 @@ def route_explicit_tool(prompt: str, tools: list[dict[str, Any]]) -> ParsedToolC
                 content = match.group(1).strip()
                 break
         if content is None:
-            match = re.search(r"salve\s+o\s+texto\s+(.+?)\s+no\s+arquivo", prompt, flags=re.IGNORECASE | re.DOTALL)
+            match = re.search(
+                r"salve\s+o\s+texto\s+(.+?)\s+no\s+arquivo",
+                prompt,
+                flags=re.IGNORECASE | re.DOTALL,
+            )
             if match:
                 content = match.group(1).strip(" `\"'")
         if content is not None:
             return ParsedToolCall("write", {"path": path, "content": content})
 
-    if path and "read" in names and re.search(r"\b(leia|abra|mostre|inspecione|confira|analise|veja)\b", lowered):
+    if path and "read" in names and re.search(
+        r"\b(leia|abra|mostre|inspecione|confira|analise|veja)\b",
+        lowered,
+    ):
         return ParsedToolCall("read", {"path": path})
 
     return None
 
 
-def choose_tool_call(prompt: str, tools: list[dict[str, Any]], model_calls: list[ParsedToolCall]) -> ParsedToolCall | None:
+def choose_tool_call(
+    prompt: str,
+    tools: list[dict[str, Any]],
+    model_calls: list[ParsedToolCall],
+) -> ParsedToolCall | None:
     explicit = route_explicit_tool(prompt, tools)
     if explicit:
         return explicit

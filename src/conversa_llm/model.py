@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import math
-
 import torch
 from torch import nn
 import torch.nn.functional as F
@@ -16,9 +14,9 @@ class CausalSelfAttention(nn.Module):
             raise ValueError("d_model deve ser divisível por n_heads")
         self.n_heads = config.n_heads
         self.head_dim = config.d_model // config.n_heads
+        self.dropout_p = config.dropout
         self.qkv = nn.Linear(config.d_model, 3 * config.d_model, bias=False)
         self.out = nn.Linear(config.d_model, config.d_model, bias=False)
-        self.dropout = nn.Dropout(config.dropout)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         batch, seq_len, channels = x.shape
@@ -28,13 +26,16 @@ class CausalSelfAttention(nn.Module):
         k = k.view(batch, seq_len, self.n_heads, self.head_dim).transpose(1, 2)
         v = v.view(batch, seq_len, self.n_heads, self.head_dim).transpose(1, 2)
 
-        scores = (q @ k.transpose(-2, -1)) / math.sqrt(self.head_dim)
-        mask = torch.ones(seq_len, seq_len, device=x.device, dtype=torch.bool).tril()
-        scores = scores.masked_fill(~mask, torch.finfo(scores.dtype).min)
-        weights = F.softmax(scores, dim=-1)
-        weights = self.dropout(weights)
-
-        y = weights @ v
+        # Usa o kernel SDPA do PyTorch quando disponível. Mantém o mesmo state_dict
+        # dos checkpoints antigos e reduz memória em contextos maiores.
+        y = F.scaled_dot_product_attention(
+            q,
+            k,
+            v,
+            attn_mask=None,
+            dropout_p=self.dropout_p if self.training else 0.0,
+            is_causal=True,
+        )
         y = y.transpose(1, 2).contiguous().view(batch, seq_len, channels)
         return self.out(y)
 

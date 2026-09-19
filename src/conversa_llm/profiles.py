@@ -23,18 +23,23 @@ PROFILES: dict[str, TrainingProfile] = {
         d_model=96, layers=3, heads=4, context=128,
         batch_size=2, grad_accum=8, lr=3e-4,
     ),
-    # Perfil do checkpoint Pi v2: ~433 mil parâmetros, BPE e contexto neural 256.
-    "cpu-8gb-pi": TrainingProfile(
+    # Mantido para reproduzir checkpoints Pi antigos.
+    "cpu-8gb-pi-small": TrainingProfile(
         d_model=96, layers=3, heads=4, context=256,
         batch_size=2, grad_accum=4, lr=8e-4,
     ),
+    # Novo alvo: ~6-7M parâmetros e 512 tokens, ainda viável em 8 GB.
+    "cpu-8gb-pi": TrainingProfile(
+        d_model=256, layers=8, heads=8, context=512,
+        batch_size=1, grad_accum=8, lr=3e-4,
+    ),
     "cpu-16gb": TrainingProfile(
-        d_model=128, layers=4, heads=4, context=256,
-        batch_size=4, grad_accum=8, lr=3e-4,
+        d_model=192, layers=6, heads=6, context=512,
+        batch_size=2, grad_accum=8, lr=3e-4,
     ),
     "gpu-12gb": TrainingProfile(
-        d_model=256, layers=6, heads=8, context=256,
-        batch_size=8, grad_accum=4, lr=3e-4,
+        d_model=384, layers=10, heads=8, context=1024,
+        batch_size=4, grad_accum=4, lr=2e-4,
     ),
 }
 
