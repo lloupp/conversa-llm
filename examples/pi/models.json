@@ -18,8 +18,8 @@
           "name": "Conversa Pi (local)",
           "reasoning": false,
           "input": ["text"],
-          "contextWindow": 256,
-          "maxTokens": 96,
+          "contextWindow": 8192,
+          "maxTokens": 160,
           "cost": {
             "input": 0,
             "output": 0,
@@ -27,7 +27,7 @@
             "cacheWrite": 0
           },
           "samplingParams": {
-            "temperature": 0.3,
+            "temperature": 0.25,
             "top_k": 20
           }
         }

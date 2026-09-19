@@ -16,5 +16,14 @@ jobs:
           cache: pip
       - name: Install
         run: python -m pip install -e ".[dev]"
-      - name: Tests
+      - name: Unit tests
         run: pytest -q
+      - name: Build curricula
+        run: |
+          python scripts/build_pi_curriculum.py
+          python scripts/build_pi_agent_curriculum.py
+      - name: Validate hybrid tool router
+        run: python scripts/eval_hybrid_tools.py
+      - name: Train tiny BPE smoke tokenizer
+        run: |
+          python scripts/build_bpe_tokenizer.py             --data data/pi_curriculum.jsonl data/pi_agent_curriculum.jsonl             --out /tmp/pi_bpe.json             --vocab-size 300             --min-pair-freq 2

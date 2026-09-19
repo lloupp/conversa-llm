@@ -1,12 +1,8 @@
 # Conversa LLM no Pi Agent
 
-O Conversa LLM expõe uma API local compatível com OpenAI Chat Completions:
+O Conversa LLM expõe uma API local compatível com OpenAI Chat Completions, incluindo streaming e `tool_calls` nativo.
 
-- `GET /health`
-- `GET /v1/models`
-- `POST /v1/chat/completions`
-- streaming SSE
-- `tool_calls` nativo no formato OpenAI
+O Pi oferece por padrão `read`, `write`, `edit` e `bash`; também pode habilitar `powershell`, `grep`, `find` e `ls`. O adaptador do Conversa Pi aceita todas essas ferramentas.
 
 ## Instalação no Windows
 
@@ -19,9 +15,7 @@ python -m pip install --upgrade pip
 pip install -e ".[web]"
 ```
 
-## Arquivos do checkpoint Pi
-
-Coloque:
+## Arquivos do checkpoint
 
 ```text
 checkpoints/conversa-pi.pt
@@ -46,86 +40,65 @@ Invoke-RestMethod http://127.0.0.1:8000/health
 
 ## Configurar o Pi
 
-Copie ou mescle `examples/pi/models.json` em:
+Mescle `examples/pi/models.json` em:
 
 ```text
 $HOME\.pi\agent\models.json
 ```
 
-Depois abra o Pi, execute `/model` e selecione:
+Abra o Pi, execute `/model` e selecione `Conversa Pi (local)`.
+
+### Windows
+
+O Pi usa Git Bash por padrão. Para expor PowerShell e as ferramentas de exploração, mescle `examples/pi/settings.windows.json` em `$HOME\.pi\agent\settings.json`.
+
+## Contexto: transporte x modelo neural
+
+O arquivo `models.json` anuncia 8192 tokens ao Pi para permitir que ele envie o envelope de sessão, schemas de ferramentas e histórico. O servidor não passa isso cru para a rede neural.
+
+O checkpoint `cpu-8gb-pi` tem **512 tokens neurais**. Antes da inferência, o servidor:
+
+1. descarta system prompts gigantes que não agregam ao pequeno modelo;
+2. transforma os schemas das ferramentas em um catálogo compacto;
+3. preserva os turnos recentes e resultados de ferramentas;
+4. recorta o prompt final para caber no contexto neural.
+
+Isso é uma forma de compaction local. Não significa que o modelo possua memória real de 8192 tokens.
+
+## Ciclo de agente
+
+O treino novo usa o mesmo formato renderizado que o servidor usa em produção:
 
 ```text
-Conversa Pi (local)
+USUÁRIO: corrija o bug
+ASSISTENTE: <tool_call>read...</tool_call>
+RESULTADO read: ...
+ASSISTENTE: <tool_call>edit...</tool_call>
+RESULTADO edit: ...
+ASSISTENTE: <tool_call>bash...</tool_call>
+RESULTADO bash: FAILED...
+ASSISTENTE: <tool_call>edit...</tool_call>
+...
+RESULTADO bash: passed
+ASSISTENTE: correção concluída
 ```
 
-### Windows: PowerShell como ferramenta
-
-O Pi usa Git Bash por padrão no Windows. Se preferir PowerShell, mescle o conteúdo de:
-
-```text
-examples/pi/settings.windows.json
-```
-
-em:
-
-```text
-$HOME\.pi\agent\settings.json
-```
-
-## Como o tool calling funciona
-
-O modelo pode emitir internamente:
-
-```text
-<tool_call>{"name":"read","arguments":{"path":"README.md"}}</tool_call>
-```
-
-O adaptador converte isso para o formato OpenAI:
-
-```json
-{
-  "tool_calls": [{
-    "type": "function",
-    "function": {
-      "name": "read",
-      "arguments": "{\"path\":\"README.md\"}"
-    }
-  }]
-}
-```
-
-O Pi executa a ferramenta e devolve o resultado numa mensagem `tool`. O servidor inclui esse resultado no próximo contexto do modelo.
+Assim, a rede aprende não apenas a selecionar tools, mas também a reagir aos resultados.
 
 ## Roteador híbrido
 
-Para pedidos explícitos e simples, o adaptador não depende apenas da geração neural. Exemplos:
+Pedidos explícitos simples podem ser convertidos deterministicamente em chamadas para `read`, `write`, `edit`, `bash`, `powershell`, `grep`, `find` e `ls`. Isso é uma camada de confiabilidade; não deve ser confundido com inteligência neural.
 
-- "Leia src/app.py"
-- "Execute no shell o comando `pytest -q`"
-- "Substitua alpha por beta em src/app.py"
-
-O roteador extrai a intenção e os argumentos diretamente e produz a chamada estruturada. Isso reduz erros de cópia de caminhos/comandos em um modelo pequeno.
-
-Use `--no-hybrid-tools` para medir apenas o comportamento neural.
+Use `--no-hybrid-tools` ao medir o modelo sem essa ajuda.
 
 ## Busca web
 
-Com `--web-fallback`, perguntas textuais fora do conhecimento local podem cair no mecanismo de busca e retornar fontes/snippets.
-
-O fallback web não substitui tool calling do Pi e não executa comandos externos.
+Com `--web-fallback`, perguntas textuais fora do conhecimento local podem usar busca web. O fallback devolve resultados/fontes; não concede à rede neural conhecimento permanente.
 
 ## Segurança
 
-As ferramentas do Pi operam com as permissões normais do processo. Use Git para rollback, revise comandos destrutivos e rode o Pi dentro de um diretório de projeto apropriado.
+As ferramentas do Pi rodam com as permissões normais do processo. Mantenha o projeto sob Git e revise operações destrutivas.
 
-## Limites atuais
+## Limite atual
 
-O modelo continua pequeno e não deve ser comparado a um LLM comercial:
-
-- contexto neural: 256 tokens;
-- bom para chamadas curtas de ferramenta e pequenas funções Python;
-- histórico longo é compactado;
-- tarefas complexas de arquitetura ainda exigem modelos maiores;
-- o roteador híbrido cobre intenções explícitas, mas não raciocínio arbitrário de ferramenta.
-
-O objetivo deste marco é ser funcional como agente local pequeno e treinável no seu PC de 8 GB.
+Mesmo com alguns milhões de parâmetros, este continua sendo um modelo experimental treinado do zero em um PC doméstico. O objetivo é ganhar capacidade verificável em tarefas pequenas de engenharia de software; projetos grandes e raciocínio profundo ainda exigirão muito mais dados e computação.
