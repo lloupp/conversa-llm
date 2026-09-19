@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 from conversa_llm.data import ConversationDataset
@@ -25,10 +26,11 @@ def test_dataset_can_supervise_full_sequence(tmp_path: Path):
 
 def test_dataset_supports_prompt_completion(tmp_path: Path):
     path = tmp_path / "agent.jsonl"
-    path.write_text(
-        '{"prompt":"HISTÓRICO: leia a.txt","completion":"<tool_call>{\"name\":\"read\",\"arguments\":{\"path\":\"a.txt\"}}</tool_call>"}\n',
-        encoding="utf-8",
-    )
+    payload = {
+        "prompt": "HISTÓRICO: leia a.txt",
+        "completion": '<tool_call>{"name":"read","arguments":{"path":"a.txt"}}</tool_call>',
+    }
+    path.write_text(json.dumps(payload, ensure_ascii=False) + "\n", encoding="utf-8")
     dataset = ConversationDataset(
         path,
         context_length=256,
