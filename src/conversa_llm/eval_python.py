@@ -13,7 +13,7 @@ from .tokenizer import ByteTokenizer
 
 def _candidate_example(tokenizer: ByteTokenizer, question: str, candidate: str, context_length: int):
     prefix = tokenizer.encode_prompt(question)
-    answer = tokenizer.encode_text(candidate) + [tokenizer.SEP]
+    answer = (tokenizer.encode_text(candidate) + [tokenizer.SEP])[-(context_length - 1):]
     keep_prefix = max(1, context_length + 1 - len(answer))
     prefix = prefix[-keep_prefix:]
     tokens = prefix + answer

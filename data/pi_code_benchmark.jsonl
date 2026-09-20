@@ -1,0 +1,5 @@
+{"name": "soma", "prompt": "Crie uma função soma(a, b) que retorna a soma.", "tests": [["soma(2, 3)", 5], ["soma(-1, 1)", 0]]}
+{"name": "eh_par", "prompt": "Crie uma função eh_par(n) que retorna True se n for par.", "tests": [["eh_par(4)", true], ["eh_par(5)", false]]}
+{"name": "maior", "prompt": "Crie uma função maior(a, b) que retorna o maior.", "tests": [["maior(7, 3)", 7], ["maior(2, 9)", 9]]}
+{"name": "dobro", "prompt": "Crie uma função dobro(n) que retorna o dobro.", "tests": [["dobro(8)", 16], ["dobro(-2)", -4]]}
+{"name": "inverter", "prompt": "Crie uma função inverter(texto) que inverte uma string.", "tests": [["inverter('abc')", "cba"], ["inverter('oi')", "io"]]}
