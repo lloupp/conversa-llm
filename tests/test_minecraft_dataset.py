@@ -1,10 +1,13 @@
-from scripts.build_minecraft_decision_curriculum import (
-    BENCHMARK_CASES,
-    TRAIN_CASES,
-    VALIDATION_CASES,
-    validate_splits,
-)
+from pathlib import Path
+import runpy
+
 from conversa_llm.minecraft_decision import MINECRAFT_ACTION_TO_ID
+
+_module = runpy.run_path(str(Path(__file__).resolve().parents[1] / "scripts" / "build_minecraft_decision_curriculum.py"))
+TRAIN_CASES = _module["TRAIN_CASES"]
+VALIDATION_CASES = _module["VALIDATION_CASES"]
+BENCHMARK_CASES = _module["BENCHMARK_CASES"]
+validate_splits = _module["validate_splits"]
 
 
 def test_minecraft_dataset_splits_are_disjoint():
