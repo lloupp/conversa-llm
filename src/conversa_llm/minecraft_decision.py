@@ -33,9 +33,17 @@ class MinecraftDecisionModel(DecisionModel):
         super().__init__(config)
 
     @torch.no_grad()
-    def decide(self, input_ids, attention_mask=None, temperature: float = 1.0) -> dict:
+    def decide(self, input_ids, attention_mask=None, temperature: float = 1.0, available_actions=None) -> dict:
         self.eval()
         logits, _ = self(input_ids, attention_mask)
+        if available_actions is not None:
+            allowed = {a for a in available_actions if a in MINECRAFT_ACTION_TO_ID}
+            if not allowed:
+                return {"action": "wait", "confidence": 0.0, "probabilities": {}, "trusted": False}
+            action_mask = torch.full_like(logits, float("-inf"))
+            for action in allowed:
+                action_mask[:, MINECRAFT_ACTION_TO_ID[action]] = 0.0
+            logits = logits + action_mask
         probs = F.softmax(logits / max(float(temperature), 1e-4), dim=-1)
         values, indices = probs.max(dim=-1)
         index = int(indices[0].item())
@@ -52,6 +60,8 @@ class MinecraftDecisionModel(DecisionModel):
 class MinecraftDecisionRuntime:
     def __init__(self, model_path: str, tokenizer_file: str, device: str = "cpu", threshold: float = 0.70):
         checkpoint = torch.load(model_path, map_location=device, weights_only=True)
+        if checkpoint.get("profile") != "minecraft":
+            raise ValueError("checkpoint não é do perfil Minecraft")
         raw_config = dict(checkpoint["config"])
         raw_config["n_actions"] = len(MINECRAFT_ACTIONS)
         self.model = MinecraftDecisionModel(DecisionConfig(**raw_config)).to(device)
@@ -62,12 +72,12 @@ class MinecraftDecisionRuntime:
         self.device = device
         self.threshold = float(threshold)
 
-    def decide_state(self, state: str) -> dict:
+    def decide_state(self, state: str, available_actions=None) -> dict:
         ids = self.tokenizer.encode_text(state)[-self.model.config.context_length:]
         if not ids:
             return {"action": "wait", "confidence": 0.0, "probabilities": {}, "trusted": False}
         x = torch.tensor([ids], dtype=torch.long, device=self.device)
         mask = torch.ones_like(x, dtype=torch.bool)
-        decision = self.model.decide(x, mask, temperature=self.temperature)
+        decision = self.model.decide(x, mask, temperature=self.temperature, available_actions=available_actions)
         decision["trusted"] = decision["confidence"] >= self.threshold
         return decision

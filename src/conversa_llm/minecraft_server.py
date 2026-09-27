@@ -37,7 +37,10 @@ class Handler(BaseHTTPRequestHandler):
                 state = json.dumps(state, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
             if not isinstance(state, str) or not state.strip():
                 raise ValueError("state obrigatório")
-            self.send_json(200, self.runtime.decide_state(state))
+            available_actions = body.get("available_actions")
+            if available_actions is not None and not isinstance(available_actions, list):
+                raise ValueError("available_actions deve ser uma lista")
+            self.send_json(200, self.runtime.decide_state(state, available_actions=available_actions))
         except Exception as exc:
             self.send_json(400, {"error": str(exc)})
 

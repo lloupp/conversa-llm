@@ -19,3 +19,21 @@ def test_minecraft_profile_does_not_expose_code_actions():
     assert "bash" not in MINECRAFT_ACTIONS
     assert "write" not in MINECRAFT_ACTIONS
     assert "powershell" not in MINECRAFT_ACTIONS
+
+
+def test_minecraft_profile_masks_unavailable_actions():
+    config = DecisionConfig(vocab_size=128, context_length=16, d_model=16, n_heads=4, n_layers=1, d_ff=32)
+    model = MinecraftDecisionModel(config)
+    x = torch.randint(0, 128, (1, 8))
+    result = model.decide(x, torch.ones_like(x, dtype=torch.bool), available_actions=["gather", "wait"])
+    assert result["action"] in {"gather", "wait"}
+    assert result["probabilities"]["craft"] == 0.0
+
+
+def test_minecraft_profile_rejects_empty_action_mask():
+    config = DecisionConfig(vocab_size=128, context_length=16, d_model=16, n_heads=4, n_layers=1, d_ff=32)
+    model = MinecraftDecisionModel(config)
+    x = torch.randint(0, 128, (1, 8))
+    result = model.decide(x, torch.ones_like(x, dtype=torch.bool), available_actions=["bash"])
+    assert result["action"] == "wait"
+    assert result["trusted"] is False
