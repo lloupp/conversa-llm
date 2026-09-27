@@ -62,12 +62,12 @@ class MinecraftDecisionRuntime:
         self.device = device
         self.threshold = float(threshold)
 
-    def decide_state(self, state: str) -> dict:
+    def decide_state(self, state: str, available_actions=None) -> dict:
         ids = self.tokenizer.encode_text(state)[-self.model.config.context_length:]
         if not ids:
             return {"action": "wait", "confidence": 0.0, "probabilities": {}, "trusted": False}
         x = torch.tensor([ids], dtype=torch.long, device=self.device)
         mask = torch.ones_like(x, dtype=torch.bool)
-        decision = self.model.decide(x, mask, temperature=self.temperature)
+        decision = self.model.decide(x, mask, temperature=self.temperature, available_actions=available_actions)
         decision["trusted"] = decision["confidence"] >= self.threshold
         return decision
