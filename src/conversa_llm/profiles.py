@@ -28,6 +28,11 @@ PROFILES: dict[str, TrainingProfile] = {
         d_model=96, layers=3, heads=4, context=256,
         batch_size=2, grad_accum=4, lr=8e-4,
     ),
+    # BPE byte-level + context=256: ~1.8M params, seguro em 8 GB.
+    "cpu-8gb-bpe": TrainingProfile(
+        d_model=128, layers=4, heads=4, context=256,
+        batch_size=2, grad_accum=8, lr=3e-4,
+    ),
     # Novo alvo: ~6-7M parâmetros e 512 tokens, ainda viável em 8 GB.
     "cpu-8gb-pi": TrainingProfile(
         d_model=256, layers=8, heads=8, context=512,

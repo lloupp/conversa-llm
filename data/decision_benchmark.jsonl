@@ -1,0 +1,7 @@
+{"state": "USER: Explique dict.get em Python.", "label": "answer"}
+{"state": "USER: Pesquise qual é a versão mais recente do NumPy.", "label": "web_search"}
+{"state": "USER: Abra docs/setup.md.", "label": "read"}
+{"state": "USER: Procure FIXME em src.", "label": "grep"}
+{"state": "USER: Liste a pasta tests.", "label": "ls"}
+{"state": "USER: Encontre **/*api*.py em tests.", "label": "find"}
+{"state": "TOOL_RESULT bash: 8 passed", "label": "stop"}

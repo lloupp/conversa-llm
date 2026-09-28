@@ -1,0 +1,1320 @@
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Pesquise a documentação mais recente do FastAPI.", "label": "web_search"}
+{"state": "USER: O que faz len em Python?", "label": "answer"}
+{"state": "USER: Busque def autenticar no projeto.", "label": "grep"}
+{"state": "USER: Altere DEBUG = True para DEBUG = False em config.py.", "label": "edit"}
+{"state": "USER: Use PowerShell para executar Get-ChildItem.", "label": "powershell"}
+{"state": "USER: Descubra onde autenticar está definida.\nTOOL_RESULT grep: src/auth.py:12:def autenticar", "label": "read"}
+{"state": "USER: Encontre **/*.py em tests.", "label": "find"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: read\nTOOL_RESULT read: def soma(a,b):\n    return a-b", "label": "edit"}
+{"state": "USER: Troque foo por bar em src/app.py.", "label": "edit"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 12 passed in 0.31s", "label": "stop"}
+{"state": "USER: Leia README.md.", "label": "read"}
+{"state": "USER: Qual a diferença entre tuple e list?", "label": "answer"}
+{"state": "USER: Escreva uma função simples de soma.", "label": "answer"}
+{"state": "USER: Escreva pronto em notes.txt.", "label": "write"}
+{"state": "USER: Explique uma lista Python.", "label": "answer"}
+{"state": "USER: Quero informação atual sobre uma biblioteca que você não conhece.", "label": "web_search"}
+{"state": "USER: Liste os arquivos em src.", "label": "ls"}
+{"state": "USER: Corrija o bug e valide.\nTOOL_RESULT bash: 1 failed: AssertionError", "label": "read"}
+{"state": "USER: Qual operador calcula resto em Python?", "label": "answer"}
+{"state": "USER: Qual release do Python saiu mais recentemente?", "label": "web_search"}
+{"state": "USER: Corrija src/calc.py e rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: Arquivo atualizado.", "label": "bash"}
+{"state": "USER: Abra src/app.py.", "label": "read"}
+{"state": "USER: Qual é a versão atual do Django?", "label": "web_search"}
+{"state": "USER: Como funciona return?", "label": "answer"}
+{"state": "USER: Procure TODO em src.", "label": "grep"}
+{"state": "USER: Rode pytest -q no terminal.", "label": "bash"}
+{"state": "USER: Rode no PowerShell python --version.", "label": "powershell"}
+{"state": "USER: Busque na internet as mudanças recentes do PyTorch.", "label": "web_search"}
+{"state": "USER: Execute python -m compileall src.", "label": "bash"}
+{"state": "USER: Crie status.txt com conteúdo ok.", "label": "write"}
+{"state": "USER: Localize arquivos *config*.json.", "label": "find"}
+{"state": "USER: Inspecione pyproject.toml.", "label": "read"}
+{"state": "USER: Mostre o conteúdo do diretório docs.", "label": "ls"}

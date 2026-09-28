@@ -13,6 +13,7 @@ import torch
 
 from .agent_prompt import fit_prompt, render_agent_prompt
 from .chat import load_model
+from .decision_runtime import DecisionRuntime
 from .tokenizer_loader import load_tokenizer
 from .tool_protocol import ParsedToolCall, parse_tool_calls, strip_tool_calls
 from .tool_router import choose_tool_call, route_explicit_tool
@@ -72,6 +73,9 @@ class LocalBackend:
         web_fallback: bool = False,
         unknown_threshold: float = 0.35,
         hybrid_tools: bool = True,
+        decision_model_path: str | None = None,
+        decision_tokenizer_file: str | None = None,
+        decision_threshold: float = 0.65,
     ):
         self.model = load_model(model_path, device)
         self.tokenizer = load_tokenizer(tokenizer_file)
@@ -81,6 +85,16 @@ class LocalBackend:
         self.unknown_threshold = unknown_threshold
         self.hybrid_tools = hybrid_tools
         self.lock = threading.Lock()
+        self.decision: DecisionRuntime | None = (
+            DecisionRuntime(
+                decision_model_path,
+                decision_tokenizer_file or tokenizer_file or "",
+                device,
+                decision_threshold,
+            )
+            if decision_model_path
+            else None
+        )
 
     @property
     def effective_context(self) -> int:
@@ -90,7 +104,7 @@ class LocalBackend:
         unk = getattr(self.tokenizer, "UNK", None)
         if unk is None:
             return 0.0
-        ids = self.tokenizer.encode_text(prompt)
+        ids = self.tokenizer.encode_prompt(prompt)
         return 0.0 if not ids else sum(token == unk for token in ids) / len(ids)
 
     def token_count(self, text: str) -> int:
@@ -234,8 +248,11 @@ class OpenAIHandler(BaseHTTPRequestHandler):
                 body.get("temperature", 0.3),
                 body.get("top_k", 20),
             )
-        except Exception as exc:
+        except ValueError as exc:
             self._send_json(400, {"error": {"message": str(exc), "type": "invalid_request_error"}})
+            return
+        except Exception as exc:
+            self._send_json(500, {"error": {"message": str(exc), "type": "server_error"}})
             return
 
         requested_model = body.get("model") or self.backend.model_id
@@ -307,7 +324,7 @@ class OpenAIHandler(BaseHTTPRequestHandler):
                 },
             }]
         prompt_text = latest_user_prompt(messages)
-        prompt_tokens = self.backend.token_count(prompt_text)
+        prompt_tokens = len(self.backend.tokenizer.encode_prompt(prompt_text))
         completion_text = reply.content or (
             json.dumps(reply.tool_call.arguments) if reply.tool_call else ""
         )
@@ -348,6 +365,9 @@ def build_parser() -> argparse.ArgumentParser:
         "--no-hybrid-tools", action="store_true",
         help="desativa reparo/roteamento explícito",
     )
+    parser.add_argument("--decision-model", default=None, help="checkpoint do System One")
+    parser.add_argument("--decision-tokenizer-file", default=None)
+    parser.add_argument("--decision-threshold", type=float, default=0.65)
     return parser
 
 

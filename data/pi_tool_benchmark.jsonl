@@ -1,0 +1,8 @@
+{"request": "Leia src/router.py.", "name": "read", "arguments": {"path": "src/router.py"}}
+{"request": "Abra docs/setup.md e veja o conteúdo.", "name": "read", "arguments": {"path": "docs/setup.md"}}
+{"request": "Execute no shell o comando `pytest tests -q` agora.", "name": "bash", "arguments": {"command": "pytest tests -q"}}
+{"request": "Rode `python -m compileall src` no terminal.", "name": "bash", "arguments": {"command": "python -m compileall src"}}
+{"request": "Crie report.txt com exatamente este conteúdo: pronto", "name": "write", "arguments": {"path": "report.txt", "content": "pronto"}}
+{"request": "Salve o texto ok no arquivo tmp/out.txt.", "name": "write", "arguments": {"path": "tmp/out.txt", "content": "ok"}}
+{"request": "Substitua foo por bar em src/app.py.", "name": "edit", "arguments": {"path": "src/app.py", "edits": [{"oldText": "foo", "newText": "bar"}]}}
+{"request": "Troque off por on dentro de config/settings.json.", "name": "edit", "arguments": {"path": "config/settings.json", "edits": [{"oldText": "off", "newText": "on"}]}}
