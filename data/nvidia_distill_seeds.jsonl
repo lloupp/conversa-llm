@@ -1,0 +1,24 @@
+{"kind":"generation","prompt":"Explique a diferença entre lista e tupla em Python em duas frases."}
+{"kind":"decision","state":"USER: Abra o arquivo docs/arquitetura.md e leia seu conteúdo.","expected_label":"read"}
+{"kind":"generation","prompt":"Implemente uma função Python contar_vogais(texto) que retorne o número de vogais, incluindo maiúsculas."}
+{"kind":"decision","state":"USER: Faça uma pesquisa online sobre a versão mais recente do Rust.","expected_label":"web_search"}
+{"kind":"generation","prompt":"Em Python, explique com um exemplo curto o que significa uma exceção ValueError."}
+{"kind":"decision","state":"USER: Explique o conceito de recursão sem usar ferramentas.","expected_label":"answer"}
+{"kind":"generation","prompt":"Escreva uma função Python media(numeros) que calcule a média e retorne None se a lista estiver vazia."}
+{"kind":"decision","state":"USER: Liste os itens na pasta exemplos.","expected_label":"ls"}
+{"kind":"generation","prompt":"Explique o objetivo de testes unitários em duas frases."}
+{"kind":"decision","state":"USER: Encontre arquivos que terminem com .toml dentro do projeto.","expected_label":"find"}
+{"kind":"generation","prompt":"Escreva uma função Python fatorial(n) para inteiros não negativos, lançando ValueError para negativos."}
+{"kind":"decision","state":"USER: Procure todas as ocorrências de FIXME em src/.","expected_label":"grep"}
+{"kind":"generation","prompt":"Explique a diferença entre um processo e uma thread em português simples."}
+{"kind":"decision","state":"USER: Execute pytest tests/test_router.py -q em bash.","expected_label":"bash"}
+{"kind":"generation","prompt":"Implemente uma função Python unico_preservando_ordem(itens) que remova duplicados."}
+{"kind":"decision","state":"USER: Execute Get-ChildItem no PowerShell.","expected_label":"powershell"}
+{"kind":"generation","prompt":"O que é um arquivo JSONL e quando ele é útil para treinamento? Responda brevemente."}
+{"kind":"decision","state":"USER: Grave a palavra aprovado em resultado.txt.","expected_label":"write"}
+{"kind":"generation","prompt":"Escreva uma função Python palindromo(texto) que ignore maiúsculas e espaços."}
+{"kind":"decision","state":"USER: Edite src/main.py trocando DEBUG=True por DEBUG=False.","expected_label":"edit"}
+{"kind":"generation","prompt":"Explique o que é um git branch e por que usá-lo antes de mudar código."}
+{"kind":"decision","state":"USER: Ajuste a função, execute os testes e pare quando todos passarem.\nLAST_TOOL_CALL: bash\nTOOL_RESULT bash: 18 passed in 0.17s","expected_label":"stop"}
+{"kind":"generation","prompt":"Escreva uma função Python soma_pares(numeros) que retorne a soma apenas dos inteiros pares."}
+{"kind":"decision","state":"USER: Ajuste a função e depois rode os testes.\nLAST_TOOL_CALL: edit\nTOOL_RESULT edit: arquivo atualizado.","expected_label":"bash"}
