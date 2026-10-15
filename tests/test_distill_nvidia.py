@@ -3,10 +3,19 @@ from pathlib import Path
 
 import pytest
 
-from scripts.distill_nvidia import (
-    normalized_answer, prepare_seeds, response_content, run_collection,
-    teacher_messages, validate_seed,
-)
+import importlib.util
+
+MODULE = Path(__file__).resolve().parents[1] / "scripts" / "distill_nvidia.py"
+spec = importlib.util.spec_from_file_location("distill_nvidia", MODULE)
+assert spec is not None and spec.loader is not None
+distill_nvidia = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(distill_nvidia)
+normalized_answer = distill_nvidia.normalized_answer
+prepare_seeds = distill_nvidia.prepare_seeds
+response_content = distill_nvidia.response_content
+run_collection = distill_nvidia.run_collection
+teacher_messages = distill_nvidia.teacher_messages
+validate_seed = distill_nvidia.validate_seed
 
 
 def test_dedup_does_not_include_holdout():
