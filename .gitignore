@@ -8,3 +8,6 @@ checkpoints/
 *.pt
 *.pth
 .DS_Store
+
+# Private API-generated training data (not for Git)
+/data/distilled_nvidia/
